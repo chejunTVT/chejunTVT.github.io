@@ -191,6 +191,107 @@
 
 
   
+    <article id="post-八股文1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/15/%E5%85%AB%E8%82%A1%E6%96%871/" class="article-date">
+  <time class="dt-published" datetime="2022-07-15T15:38:07.000Z" itemprop="datePublished">2022-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/15/%E5%85%AB%E8%82%A1%E6%96%871/">八股文2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="说说你对MVC的理解"><a href="#说说你对MVC的理解" class="headerlink" title="说说你对MVC的理解"></a>说说你对MVC的理解</h1><h2 id="MVC是一种设计模式-在这种模式下软件被分为三层-即Model（模型）、View（视图）、Controller（控制器）。Model代表的是数据-View代表的是用户界面-Controller代表的是数据的处理逻辑-它是Model和View这两层的桥梁。将软件分层的好处是-可以将对象之间的耦合度降低-便于代码的维护。"><a href="#MVC是一种设计模式-在这种模式下软件被分为三层-即Model（模型）、View（视图）、Controller（控制器）。Model代表的是数据-View代表的是用户界面-Controller代表的是数据的处理逻辑-它是Model和View这两层的桥梁。将软件分层的好处是-可以将对象之间的耦合度降低-便于代码的维护。" class="headerlink" title="MVC是一种设计模式,在这种模式下软件被分为三层,即Model（模型）、View（视图）、Controller（控制器）。Model代表的是数据,View代表的是用户界面,Controller代表的是数据的处理逻辑,它是Model和View这两层的桥梁。将软件分层的好处是,可以将对象之间的耦合度降低,便于代码的维护。"></a>MVC是一种设计模式,在这种模式下软件被分为三层,即Model（模型）、View（视图）、Controller（控制器）。Model代表的是数据,View代表的是用户界面,Controller代表的是数据的处理逻辑,它是Model和View这两层的桥梁。将软件分层的好处是,可以将对象之间的耦合度降低,便于代码的维护。</h2><ul>
+<li>Model：指从现实世界中抽象出来的对象模型,是应用逻辑的反应；它封装了数据和对数据的操作,是实际进行数据处理的地方（模型层与数据库才有交互）。在MVC的三个部件中,模型拥有最多的处理任务。被模型返回的数据是中立的,模型与数据格式无关,这样一个模型能为多个视图提供数据,由于应用于模型的代码只需写一次就可以被多个视图重用,所以减少了代码的重复性。</li>
+<li>View：负责进行模型的展示,一般就是我们见到的用户界面。 </li>
+<li>Controller：控制器负责视图和模型之间的交互,控制对用户输入的响应、响应方式和流程；它主要负责两方面的动作,一是把用户的请求分发到相应的模型,二是吧模型的改变及时地反映到视图上。</li>
+</ul>
+<h1 id="详细的说说Redis的数据类型"><a href="#详细的说说Redis的数据类型" class="headerlink" title="详细的说说Redis的数据类型"></a>详细的说说Redis的数据类型</h1><h2 id="Redis主要提供了5种数据结构：字符串-string-、哈希-hash-、列表-list-、集合-set-、有序集合-zset-。Redis还提供了Bitmap、HyperLogLog、Geo类型-但这些类型都是基于上述核心数据类型实现的。"><a href="#Redis主要提供了5种数据结构：字符串-string-、哈希-hash-、列表-list-、集合-set-、有序集合-zset-。Redis还提供了Bitmap、HyperLogLog、Geo类型-但这些类型都是基于上述核心数据类型实现的。" class="headerlink" title="Redis主要提供了5种数据结构：字符串(string)、哈希(hash)、列表(list)、集合(set)、有序集合(zset)。Redis还提供了Bitmap、HyperLogLog、Geo类型,但这些类型都是基于上述核心数据类型实现的。"></a>Redis主要提供了5种数据结构：字符串(string)、哈希(hash)、列表(list)、集合(set)、有序集合(zset)。Redis还提供了Bitmap、HyperLogLog、Geo类型,但这些类型都是基于上述核心数据类型实现的。</h2><ul>
+<li>string可以存储字符串、数字和二进制数据,除了值可以是String以外,所有的键也可以是string,string最大可以存储大小为2M的数据。 </li>
+<li>list保证数据线性有序且元素可重复,它支持lpush、blpush、rpop、brpop等操作,可以当作简单的消息队列使用,一个list最多可以存储2^32-1个元素 </li>
+<li>hash的值本身也是一个键值对结构,最多能存储2^32-1个元素 </li>
+<li>set是无序不可重复的,它支持多个set求交集、并集、差集,适合实现共同关注之类的需求,一个set最多可以存储2^32-1个元素 </li>
+<li>zset是有序不可重复的,它通过给每个元素设置一个分数来作为排序的依据,一个zset最多可以存储2^32-1个元素。</li>
+</ul>
+<h1 id="请你说说乐观锁和悲观锁"><a href="#请你说说乐观锁和悲观锁" class="headerlink" title="请你说说乐观锁和悲观锁"></a>请你说说乐观锁和悲观锁</h1><h2 id="乐观锁：乐观锁总是假设最好的情况-每次去拿数据的时候都认为别人不会修改-所以不会上锁-但是在更新的时候会判断一下在此期间别人有没有去更新这个数据-可以使用版本号机制和CAS算法实现。乐观锁适用于多读的应用类型-这样可以提高吞吐量-像数据库提供的类似于write-condition机制-其实都是提供的乐观锁"><a href="#乐观锁：乐观锁总是假设最好的情况-每次去拿数据的时候都认为别人不会修改-所以不会上锁-但是在更新的时候会判断一下在此期间别人有没有去更新这个数据-可以使用版本号机制和CAS算法实现。乐观锁适用于多读的应用类型-这样可以提高吞吐量-像数据库提供的类似于write-condition机制-其实都是提供的乐观锁" class="headerlink" title="乐观锁：乐观锁总是假设最好的情况,每次去拿数据的时候都认为别人不会修改,所以不会上锁,但是在更新的时候会判断一下在此期间别人有没有去更新这个数据,可以使用版本号机制和CAS算法实现。乐观锁适用于多读的应用类型,这样可以提高吞吐量,像数据库提供的类似于write_condition机制,其实都是提供的乐观锁"></a>乐观锁：乐观锁总是假设最好的情况,每次去拿数据的时候都认为别人不会修改,所以不会上锁,但是在更新的时候会判断一下在此期间别人有没有去更新这个数据,可以使用版本号机制和CAS算法实现。乐观锁适用于多读的应用类型,这样可以提高吞吐量,像数据库提供的类似于write_condition机制,其实都是提供的乐观锁</h2><h2 id="悲观锁：悲观锁总是假设最坏的情况-每次去拿数据的时候都认为别人会修改-所以每次在拿数据的时候都会上锁-这样别人想拿这个数据就会阻塞直到它拿到锁（共享资源每次只给一个线程使用-其它线程阻塞-用完后再把资源转让给其它线程）。传统的关系型数据库里边就用到了很多这种锁机制-比如行锁-表锁等-读锁-写锁等-都是在做操作之前先上锁。"><a href="#悲观锁：悲观锁总是假设最坏的情况-每次去拿数据的时候都认为别人会修改-所以每次在拿数据的时候都会上锁-这样别人想拿这个数据就会阻塞直到它拿到锁（共享资源每次只给一个线程使用-其它线程阻塞-用完后再把资源转让给其它线程）。传统的关系型数据库里边就用到了很多这种锁机制-比如行锁-表锁等-读锁-写锁等-都是在做操作之前先上锁。" class="headerlink" title="悲观锁：悲观锁总是假设最坏的情况,每次去拿数据的时候都认为别人会修改,所以每次在拿数据的时候都会上锁,这样别人想拿这个数据就会阻塞直到它拿到锁（共享资源每次只给一个线程使用,其它线程阻塞,用完后再把资源转让给其它线程）。传统的关系型数据库里边就用到了很多这种锁机制,比如行锁,表锁等,读锁,写锁等,都是在做操作之前先上锁。"></a>悲观锁：悲观锁总是假设最坏的情况,每次去拿数据的时候都认为别人会修改,所以每次在拿数据的时候都会上锁,这样别人想拿这个数据就会阻塞直到它拿到锁（共享资源每次只给一个线程使用,其它线程阻塞,用完后再把资源转让给其它线程）。传统的关系型数据库里边就用到了很多这种锁机制,比如行锁,表锁等,读锁,写锁等,都是在做操作之前先上锁。</h2><h1 id="设计模式了解么"><a href="#设计模式了解么" class="headerlink" title="设计模式了解么"></a>设计模式了解么</h1><ul>
+<li>创建型包括：单例模式、工厂方法模式、抽象工厂模式、建造者模式和原型模式； </li>
+<li>结构型包括：代理模式、装饰模式、适配器模式、组合模式、桥梁模式、外观模式和享元模式； </li>
+<li>行为型包括：模板方法模式、命令模式、责任链模式、策略模式、迭代器模式、中介者模式、观察者模式、备忘录模式、访问者模式、状态模式和解释器模式。 面试中不要求23种设计模式全部了解,但至少应掌握单例模式和工厂模式。</li>
+</ul>
+<p>单例模式（Singleton Pattern）是最简单的创建型设计模式。它会确保一个类只有一个实例存在。单例模式最重要的特点就是构造函数私有,从而避免外界直接使用构造函数直接实例化该类的对象。 </p>
+<p>单例模式在Java种通常有两种表现形式： - 饿汉式：类加载时就进行对象实例化 - 懒汉式：第一次引用类时才进行对象实例化 </p>
+<p>饿汉式单例模式： 在类被加载时就会初始化静态变量instance,这时候类的私有构造函数就会被调用,创建唯一的实例。 </p>
+<p>public class Singleton<br>{ </p>
+<pre><code>private static Singleton instance = new Singleton(); // 构造方法私有,确保外界不能直接实例化 
+
+private Singleton()&#123; &#125; //通过公有的静态方法获取对象实例 
+
+public static Singleton getInstance()
+&#123; return instance; &#125; 
+</code></pre>
+<p>} </p>
+<p>懒汉式单例模式： 类在加载时不会初始化静态变量instance,而是在第一次被调用时将自己初始化 </p>
+<p>public class Singleton </p>
+<p>{ </p>
+<pre><code>private static Singleton instance = null; // 私有构造方法,确保外界不能直接实例化。 
+
+private Singleton() &#123;&#125; // 通过公有的静态方法获取对象实例 public static 
+
+Singleton getInstace() &#123; 
+    
+    if (instance == null) 
+    
+    &#123; instance = new Singleton(); &#125; return instance; &#125; 
+    
+   
+</code></pre>
+<p> } </p>
+<pre><code>    但这时有一个问题,如果线程A和B同时调用此方法,会出现执行`if (instance == null)`语句时都为真的情况,那么线程AB都会创建一个对象,那内存中就会出现两个对象,这违反了单例模式的定义。为解决这一问题,可以使用synchronized关键字对静态方法 getInstance()进行同步,线程安全的的懒汉式单例模式代码如下： 
+    
+    public class Singleton 
+    &#123; 
+        
+        private static Singleton instance = null; // 私有构造方法,确保外界不能直接实例化。 
+        
+        private Singleton() &#123;&#125; // 通过公有的静态方法获取对象实例 
+        
+        synchronized public static Singleton getInstace() &#123; 
+            if (instance == null) &#123; instance = new Singleton(); &#125; 
+        
+        return instance; &#125; 
+        
+    &#125; 
+        
+        饿汉式单例类在资源利用效率上不如懒汉式单例类,但从速度和反应时间来看,饿汉式单例类要优于懒汉式单例类。
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/15/%E5%85%AB%E8%82%A1%E6%96%871/" data-id="cl5m3roz00000jcuo065959zh" data-title="八股文2" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-我的第一篇文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/06/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="article-date">
@@ -330,6 +431,10 @@
         
           <li>
             <a href="/2022/07/15/%E5%85%AB%E8%82%A1%E6%96%87/">八股文1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/%E5%85%AB%E8%82%A1%E6%96%871/">八股文2</a>
           </li>
         
           <li>
